@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
+import { BsSearch } from "react-icons/bs";
 
 const LINKS = [
   {
@@ -26,7 +28,7 @@ const LINKS = [
 
 const Header = () => {
   return (
-    <header className="py-7 absolute top-0 left-0 right-0">
+    <header className="py-7 absolute top-0 left-0 right-0 z-10 text-white">
       <div className="flex items-center container">
         <Link href="/">
           <h1 className="font-bold text-3xl tracking-tighter">Paisaflix</h1>
@@ -36,7 +38,7 @@ const Header = () => {
             <a
               className={`${idx > 0 ? "ml-11 " : ""}leading-8 block ${
                 idx == 0
-                  ? "relative after:h-[4px] after:w-full after:bg-yellow-400 after:absolute after:left-0 after:bottom-0 after:rounded-sm"
+                  ? "relative after:h-[4px] after:w-full after:bg-yellow-400 after:absolute after:left-0 after:-bottom-2"
                   : ""
               }`}
               href={link.url}
@@ -46,7 +48,15 @@ const Header = () => {
             </a>
           ))}
         </nav>
-        <div className="ml-auto">Avatar</div>
+        <div className="ml-auto flex items-center">
+          <button className="p-4 text-white">
+            <BsSearch size="20"/>
+          </button>
+          <div className="flex items-center ml-10">
+            <Image src="/avatar.png" alt="Avatar Paisanxs" width="48" height="48"/>
+            <b className="font-bold ml-4">Soy Paisanxs</b>
+          </div>
+        </div>
       </div>
     </header>
   );

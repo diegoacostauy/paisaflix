@@ -14,7 +14,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        "accent": "#fed530"
+        "yellow-400": "#fed530",
+        "gray-650": "#464646"
       },
       container: {
         center: true,
