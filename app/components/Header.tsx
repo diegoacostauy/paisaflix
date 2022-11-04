@@ -38,8 +38,8 @@ const Header = () => {
             <a
               className={`${idx > 0 ? "ml-11 " : ""}leading-8 block ${
                 idx == 0
-                  ? "relative after:h-[4px] after:w-full after:bg-yellow-400 after:absolute after:left-0 after:-bottom-2"
-                  : ""
+                  ? "relative after:h-[4px] after:w-full after:bg-yellow-400 after:absolute after:left-0 after:-bottom-2 text-white"
+                  : "text-gray-300"
               }`}
               href={link.url}
               key={link.id}
