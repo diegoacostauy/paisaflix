@@ -28,26 +28,44 @@ const Featured = async () => {
     <section>
       <div className="container">
         <div className="flex items-center mb-9">
-          <h2 className="text-white text-3xl md:text-5xl font-bold">Featured</h2>
-          <Link href="/movies" className="ml-auto md:text-2xl font-bold text-yellow-400">View More</Link>
+          <h2 className="text-white text-3xl md:text-5xl font-bold">
+            Featured
+          </h2>
+          <Link
+            href="/movies"
+            className="ml-auto md:text-2xl font-bold text-yellow-400"
+          >
+            View More
+          </Link>
         </div>
         <ol className="grid min-[450px]:grid-cols-2 md:grid-cols-3 gap-3">
-          {
-            movies.map((movie, idx) => (
-              <li className={`${idx == 0 ? 'min-[450px]:col-span-2' : ''} flex relative`} key={movie._id}>
-                <div className="flex-grow after:absolute after:left-0 after:bottom-0 after:w-full after:h-full after:bg-gradient-to-t after:from-black after:to-transparent">
+          {movies.map((movie, idx) => (
+            <li
+              className={`${
+                idx == 0 ? "min-[450px]:col-span-2" : ""
+              } flex relative`}
+              key={movie._id}
+            >
+              <div className="flex-grow after:absolute after:left-0 after:bottom-0 after:w-full after:h-full after:bg-gradient-to-t after:from-black after:to-transparent after:pointer-events-none">
+                <Link href={`/movie/${movie._id}`} className="block">
                   <b className="absolute top-7 left-7 py-1 px-3 font-light text-sm rounded-full text-gray-800 bg-yellow-400">
                     {movie.genre}
                   </b>
-                  <Image className="w-full h-full object-cover" src={movie.coverImage} width={`${idx == 0 ? '817' : '400'}`} height="560" alt={movie.name} />
+                  <Image
+                    className="w-full h-full object-cover"
+                    src={movie.coverImage}
+                    width={`${idx == 0 ? "817" : "400"}`}
+                    height="560"
+                    alt={movie.name}
+                  />
                   <div className="absolute bottom-5 p-6 z-10 w-full">
                     <ul className="flex gap-x-4 text-gray-300 text-xs mb-3 md:mb-5 md:text-sm">
                       <li className="flex gap-x-2 items-center">
-                        <AiOutlineClockCircle/>
+                        <AiOutlineClockCircle />
                         {movie.duration}
                       </li>
                       <li className="flex gap-x-2 items-center">
-                        <AiFillEye/>
+                        <AiFillEye />
                         {movie.views} views
                       </li>
                     </ul>
@@ -55,14 +73,14 @@ const Featured = async () => {
                       {movie.name}
                     </h3>
                   </div>
-                </div>
-              </li>
-            ))
-          }
+                </Link>
+              </div>
+            </li>
+          ))}
         </ol>
       </div>
     </section>
-  )
+  );
 }
 
 export default Featured

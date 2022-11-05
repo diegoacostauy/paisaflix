@@ -1,12 +1,12 @@
 "use client";
-
-import { Disclosure, Popover, Transition } from '@headlessui/react';
+import { Popover, Transition } from '@headlessui/react';
 import Image from 'next/image';
 import Link from 'next/link'
+import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import React, { Fragment } from 'react'
 import { BsSearch } from "react-icons/bs";
 import { TbMenu } from "react-icons/tb";
-import Example from './Example';
 
 const LINKS = [
   {
@@ -32,6 +32,7 @@ const LINKS = [
 ]
 
 const Header = () => {
+  const pathname = usePathname();
   return (
     <header className="py-7 absolute top-0 left-0 right-0 z-20 text-white">
       <Popover>
@@ -46,7 +47,7 @@ const Header = () => {
                   className={`${
                     idx > 0 ? "ml-11 " : ""
                   }leading-8 block hover:text-white ${
-                    idx == 0
+                    pathname == link.url
                       ? "relative after:h-[4px] after:w-full after:bg-yellow-400 after:absolute after:left-0 after:-bottom-2 text-white"
                       : "text-gray-300"
                   }`}
@@ -108,7 +109,7 @@ const Header = () => {
                   {LINKS.map((link, idx) => (
                     <a
                       className={`leading-8 block hover:text-yellow-600 py-1 px-2 rounded-md text-gray-700 ${
-                        idx == 0
+                        pathname == link.url
                           ? "relative bg-gray-100 text-yellow-600"
                           : "text-gray-800"
                       }`}
