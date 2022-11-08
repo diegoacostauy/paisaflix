@@ -1,3 +1,16 @@
+# Challenge Paisanxs
+
+## Proyecto Paisaflix
+
+[Prototipo Figma](https://www.figma.com/file/erRxNbsosFAbDGuBxprJ0r/Paisaflix?node-id=1%3A48)
+
+### Stack
+
+* [Next.js 13](https://beta.nextjs.org/)
+* [Tailwind CSS](https://tailwindcss.com)
+* [Headless UI](headlessui.com)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
