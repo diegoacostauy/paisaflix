@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react'
 import { BsArrowLeftShort } from 'react-icons/bs';
 import { EndpointType, Movie } from '../../types';
+import { formatTime } from '../../utils';
 import Stars from './Stars';
 
 type DataProps = {
@@ -25,6 +26,7 @@ async function getData({ endpoint, id }: DataProps) {
 
 const Hero = async ({ endpoint, id}: DataProps) => {
   const movie = await getData({ endpoint, id });
+
   return (
     <section className="pt-44 pb-20 relative overflow-hidden">
       <div className="container">
@@ -60,7 +62,7 @@ const Hero = async ({ endpoint, id}: DataProps) => {
                 <dt className="float-left">Genre:</dt>
                 <dd className="float-left ml-1">{movie.genre}</dd>
                 <dt className="float-left clear-left">Duration:</dt>
-                <dd className="float-left ml-1">{movie.duration}</dd>
+                <dd className="float-left ml-1">{formatTime(movie.duration)}</dd>
                 <dt className="float-left clear-left">Rating:</dt>
                 <dd className="float-left ml-1">{movie.rating}</dd>
               </dl>

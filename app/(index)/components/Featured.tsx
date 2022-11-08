@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import { AiOutlineClockCircle, AiFillEye } from "react-icons/ai";
+import { formatTime } from '../../../utils';
 
 type Movie = {
   _id: string;
@@ -62,7 +63,7 @@ const Featured = async () => {
                     <ul className="flex gap-x-4 text-gray-300 text-xs mb-3 md:mb-5 md:text-sm">
                       <li className="flex gap-x-2 items-center">
                         <AiOutlineClockCircle />
-                        {movie.duration}
+                        {formatTime(movie.duration)}
                       </li>
                       <li className="flex gap-x-2 items-center">
                         <AiFillEye />
