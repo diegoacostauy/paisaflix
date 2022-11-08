@@ -7,6 +7,7 @@
 ### Stack
 
 * [Next.js 13](https://beta.nextjs.org/)
+* [Typescript](typescriptlang.org/)
 * [Tailwind CSS](https://tailwindcss.com)
 * [Headless UI](headlessui.com)
 
